@@ -1,285 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniPropreté - Évaluez la propreté des toilettes de votre université</title>
+    <title>Trone Uqac</title>
+    <script src="scripts/gestionPagePricipal.js" defer></script>
 </head>
+
 <body>
     <!-- En-tête -->
     <header role="banner">
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <span class="logo-icon">🚽</span>
-                    <h1>UniPropreté</h1>
-                </div>
-                <nav aria-label="Navigation principale">
-                    <ul>
-                        <li><a href="#gem">Pépite de la semaine</a></li>
-                        <li><a href="#nearest">Toilettes proches</a></li>
-                        <li><a href="#buildings">Bâtiments</a></li>
-                        <li><a href="#social">Communauté</a></li>
-                    </ul>
-                </nav>
-                <div class="auth-buttons">
-                    <button class="btn btn-outline">Connexion</button>
-                    <button class="btn btn-primary">Inscription</button>
-                </div>
+                <h1>Trone Uqac</h1>
             </div>
+            <nav aria-label="Navigation principale">
+                <label for="triToilettes"></label>
+                <select name="triToilettes" id="triToilettes">
+                    <option value="note">Note</option>
+                    <option value="pavillon">Pavillon</option>
+                    <option value="etage">Étage</option>
+                </select>
+            </nav>
+        </div>
         </div>
     </header>
 
-    <!-- Section Hero -->
-    <section class="hero" role="region" aria-labelledby="hero-title">
-        <div class="container">
-            <h2 id="hero-title">Évaluez la propreté des toilettes de votre université</h2>
-            <p>Partagez votre expérience, découvrez les meilleurs endroits et aidez la communauté étudiante</p>
-            <button class="btn btn-accent" aria-label="Noter des toilettes">Noter des toilettes</button>
-        </div>
+    <!-- Section pour le classement des toilettes -->
+    <section id="toiletteClassement">
+        
     </section>
-
-    <!-- Section Pépite de la semaine -->
-    <section id="gem" class="weekly-gem" role="region" aria-labelledby="gem-title">
-        <div class="container">
-            <h2 id="gem-title" class="section-title">Pépite de la semaine</h2>
-            <div class="gem-card">
-                <div class="gem-badge">Pépite de la semaine</div>
-                <h3 class="gem-location">Toilettes - Bâtiment A, 2ème étage</h3>
-                <div class="rating">★★★★★ 4.9/5</div>
-                <p>Ces toilettes ont été notées exceptionnellement propres cette semaine avec des commentaires élogieux sur leur entretien régulier et la disponibilité du papier toilette.</p>
-                <div class="gem-details">
-                    <div class="detail-item">
-                        <div class="detail-value">4.9</div>
-                        <div class="detail-label">Note moyenne</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-value">42</div>
-                        <div class="detail-label">Avis cette semaine</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-value">98%</div>
-                        <div class="detail-label">Satisfaction</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Toilettes les plus proches -->
-    <section id="nearest" class="nearest-toilets" role="region" aria-labelledby="nearest-title">
-        <div class="container">
-            <div class="location-header">
-                <h2 id="nearest-title" class="section-title">Toilettes les plus proches</h2>
-                <button class="btn location-btn" aria-label="Utiliser ma position actuelle">
-                    <span>📍</span> Utiliser ma position
-                </button>
-            </div>
-            <div class="toilets-grid">
-                <!-- Toilette 1 -->
-                <div class="toilet-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Bâtiment B - Rez-de-chaussée</h3>
-                        <div class="card-distance">À 150 m</div>
-                    </div>
-                    <div class="card-body">
-                        <div class="rating-bar">
-                            <div class="stars">★★★★☆</div>
-                            <div class="rating-value">4.2/5</div>
-                        </div>
-                        <p>Toilettes généralement propres, papier disponible</p>
-                        <div class="features">
-                            <span class="feature-tag">♿ Accessible</span>
-                            <span class="feature-tag">👶 Table à langer</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-outline">Détails</button>
-                        <button class="btn btn-primary">Noter</button>
-                    </div>
-                </div>
-                
-                <!-- Toilette 2 -->
-                <div class="toilet-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Bâtiment C - 1er étage</h3>
-                        <div class="card-distance">À 210 m</div>
-                    </div>
-                    <div class="card-body">
-                        <div class="rating-bar">
-                            <div class="stars">★★★☆☆</div>
-                            <div class="rating-value">3.5/5</div>
-                        </div>
-                        <p>Propreté variable selon les jours</p>
-                        <div class="features">
-                            <span class="feature-tag">🔌 Prise électrique</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-outline">Détails</button>
-                        <button class="btn btn-primary">Noter</button>
-                    </div>
-                </div>
-                
-                <!-- Toilette 3 -->
-                <div class="toilet-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Bibliothèque - Sous-sol</h3>
-                        <div class="card-distance">À 320 m</div>
-                    </div>
-                    <div class="card-body">
-                        <div class="rating-bar">
-                            <div class="stars">★★★★★</div>
-                            <div class="rating-value">4.8/5</div>
-                        </div>
-                        <p>Excellente propreté, souvent vérifiées</p>
-                        <div class="features">
-                            <span class="feature-tag">♿ Accessible</span>
-                            <span class="feature-tag">🌿 Air purifié</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-outline">Détails</button>
-                        <button class="btn btn-primary">Noter</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Liste des bâtiments -->
-    <section id="buildings" class="buildings" role="region" aria-labelledby="buildings-title">
-        <div class="container">
-            <h2 id="buildings-title" class="section-title">Bâtiments de l'université</h2>
-            <div class="buildings-grid">
-                <!-- Bâtiment 1 -->
-                <div class="building-card">
-                    <div class="building-icon">🏛️</div>
-                    <h3 class="building-name">Bâtiment A</h3>
-                    <div class="building-rating">★★★★☆ 4.3</div>
-                    <p>6 toilettes</p>
-                </div>
-                
-                <!-- Bâtiment 2 -->
-                <div class="building-card">
-                    <div class="building-icon">🏢</div>
-                    <h3 class="building-name">Bâtiment B</h3>
-                    <div class="building-rating">★★★☆☆ 3.7</div>
-                    <p>8 toilettes</p>
-                </div>
-                
-                <!-- Bâtiment 3 -->
-                <div class="building-card">
-                    <div class="building-icon">📚</div>
-                    <h3 class="building-name">Bibliothèque</h3>
-                    <div class="building-rating">★★★★★ 4.8</div>
-                    <p>4 toilettes</p>
-                </div>
-                
-                <!-- Bâtiment 4 -->
-                <div class="building-card">
-                    <div class="building-icon">🍽️</div>
-                    <h3 class="building-name">Restaurant U</h3>
-                    <div class="building-rating">★★☆☆☆ 2.9</div>
-                    <p>3 toilettes</p>
-                </div>
-                
-                <!-- Bâtiment 5 -->
-                <div class="building-card">
-                    <div class="building-icon">⚽</div>
-                    <h3 class="building-name">Complexe sportif</h3>
-                    <div class="building-rating">★★★★☆ 4.1</div>
-                    <p>5 toilettes</p>
-                </div>
-                
-                <!-- Bâtiment 6 -->
-                <div class="building-card">
-                    <div class="building-icon">🔬</div>
-                    <h3 class="building-name">Bâtiment Sciences</h3>
-                    <div class="building-rating">★★★☆☆ 3.5</div>
-                    <p>7 toilettes</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Fonctionnalités sociales -->
-    <section id="social" class="social-features" role="region" aria-labelledby="social-title">
-        <div class="container">
-            <h2 id="social-title" class="section-title">Fonctionnalités sociales</h2>
-            <div class="features-grid">
-                <!-- Fonctionnalité 1 -->
-                <div class="feature-card">
-                    <div class="feature-icon">⭐</div>
-                    <h3 class="feature-title">Système de notation</h3>
-                    <p>Notez la propreté, l'équipement et l'accessibilité des toilettes</p>
-                </div>
-                
-                <!-- Fonctionnalité 2 -->
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3 class="feature-title">Avis et commentaires</h3>
-                    <p>Partagez votre expérience et lisez les avis des autres utilisateurs</p>
-                </div>
-                
-                <!-- Fonctionnalité 3 -->
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Fiche sanitaire</h3>
-                    <p>Consultez les statistiques détaillées de propreté pour chaque toilette</p>
-                </div>
-                
-                <!-- Fonctionnalité 4 -->
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3 class="feature-title">Classements</h3>
-                    <p>Découvrez les toilettes les mieux notées de l'université</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pied de page -->
-    <footer role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>UniPropreté</h3>
-                    <ul>
-                        <li><a href="#">À propos</a></li>
-                        <li><a href="#">Comment ça marche</a></li>
-                        <li><a href="#">Notre mission</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contribuer</h3>
-                    <ul>
-                        <li><a href="#">Ajouter une toilette</a></li>
-                        <li><a href="#">Signaler un problème</a></li>
-                        <li><a href="#">Devenir modérateur</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Ressources</h3>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Légal</h3>
-                    <ul>
-                        <li><a href="#">Conditions d'utilisation</a></li>
-                        <li><a href="#">Politique de confidentialité</a></li>
-                        <li><a href="#">Cookies</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 UniPropreté - Tous droits réservés</p>
-            </div>
-        </div>
-    </footer>
 </body>
+
 </html>

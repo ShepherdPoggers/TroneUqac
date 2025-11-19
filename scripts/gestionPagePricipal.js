@@ -1,26 +1,24 @@
 
 let toilettes = []
-
+/*Cette fonction permet de charger les toilettes depuis le dossier data. Elle s'assure aussi que les toilettes seront raffraichit. */
 async function loadToilette() {
     toilettes = await fetch("data/toilettes.json").then(r => r.json());
 
-    renderToilette('note')
+    triToilettes('note')
 
     const triToilettes = document.getElementById('triToilettes')
     triToilettes.addEventListener('change', (e) =>
-        renderToilette(e.target.value)
+        triToilettes(e.target.value)
     )
 
 }
 
+/*Cette fonction s'occupe du tri des toilettes. */
+function triToilettes(critere) {
 
-function renderToilette(critere) {
 
-    const classementToilette = document.getElementById("toiletteClassement")
-    classementToilette.innerHTML = ""
-
-    toilettes.sort((a,b) => {
-        switch (critere){
+    toilettes.sort((a, b) => {
+        switch (critere) {
             case 'note':
                 return noteMoyenne(b.notesGlobal) - noteMoyenne(a.notesGlobal)
             case 'etage':
@@ -28,8 +26,16 @@ function renderToilette(critere) {
             case 'pavillon':
                 return a.pavillon.localeCompare(b.pavillon)
         }
-        
+
     })
+    renderToilette()
+
+
+}
+/*Cette fonction s'occupe de l'ajout au fichier HTML de toute les toilettes */
+function renderToilette() {
+    const classementToilette = document.getElementById("toiletteClassement")
+    classementToilette.innerHTML = ""
 
     toilettes.forEach(toilette => {
         let article = document.createElement('article')
@@ -42,8 +48,7 @@ function renderToilette(critere) {
         classementToilette.appendChild(article)
     });
 }
-
-
+/*Cette fonction permet de calculer la moyenne d'une liste*/
 function noteMoyenne(list) {
     let sum = 0
     for (let i = 0; i < list.length; i++) {
@@ -52,11 +57,10 @@ function noteMoyenne(list) {
     return Math.round(sum / list.length)
 }
 
-/* Fonction pour noter la toilette et l'afficher en une seule page. À faire*/
+/*Fonction pour noter la toilette et l'afficher en une seule page. À faire*/
 function noterToilette(article) {
     console.log("Salut mec !", article);
 }
 
-
-loadToilette()
+loadToilette();
 

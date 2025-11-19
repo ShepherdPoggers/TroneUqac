@@ -1,0 +1,31 @@
+[
+  {
+    "numero_local": "P2-1005",
+    "pavillon": "Principal",
+    "etage": 2,
+    "notesGlobal": [
+      1,
+      1,
+      1,
+      2.3
+    ],
+    "notesProprete" : [],
+    "notesAchalandage" : [],
+    "image" : "./images/p21005.jpg"
+  },
+  {
+    "numero_local": "P3-1005",
+    "pavillon": "Humaniste",
+    "etage": 3,
+    "notesGlobal": [
+      3.5,
+      4.8,
+      5,
+      1.9
+    ],
+    "notesProprete" : [],
+    "notesAchalandage" : [],
+    "image" : "./images/p21005.jpg"
+
+  }
+]

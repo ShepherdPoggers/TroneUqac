@@ -8,7 +8,7 @@ async function loadToilette() {
 
     const triToilettes = document.getElementById('triToilettes')
     triToilettes.addEventListener('change', (e) =>
-        triToilettes(e.target.value)
+        tri(e.target.value)
     )
 
 }
@@ -28,12 +28,12 @@ function tri(critere) {
         }
 
     })
-    renderToilette()
+    renderToilette(toilettes)
 
 
 }
 /*Cette fonction s'occupe de l'ajout au fichier HTML de toute les toilettes */
-function renderToilette() {
+function renderToilette(toilettes) {
     const classementToilette = document.getElementById("toiletteClassement")
     classementToilette.innerHTML = ""
 

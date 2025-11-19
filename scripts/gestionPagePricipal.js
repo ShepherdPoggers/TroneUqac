@@ -4,7 +4,7 @@ let toilettes = []
 async function loadToilette() {
     toilettes = await fetch("data/toilettes.json").then(r => r.json());
 
-    triToilettes('note')
+    tri('note')
 
     const triToilettes = document.getElementById('triToilettes')
     triToilettes.addEventListener('change', (e) =>
@@ -14,7 +14,7 @@ async function loadToilette() {
 }
 
 /*Cette fonction s'occupe du tri des toilettes. */
-function triToilettes(critere) {
+function tri(critere) {
 
 
     toilettes.sort((a, b) => {

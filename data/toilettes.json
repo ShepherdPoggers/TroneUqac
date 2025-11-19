@@ -1,0 +1,24 @@
+[
+  {
+    "numero_local": "P2-1005",
+    "pavillon": "Principal",
+    "etage": 2,
+    "notes": [
+      1,
+      1,
+      1,
+      2.3
+    ]
+  },
+  {
+    "numero_local": "P3-1005",
+    "pavillon": "Humaniste",
+    "etage": 3,
+    "notes": [
+      3.5,
+      4.8,
+      5,
+      1.9
+    ]
+  }
+]

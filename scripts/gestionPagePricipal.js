@@ -44,7 +44,7 @@ function renderToilette(toilettes) {
         <h3> Note : ${noteMoyenne(toilette.notesGlobal)} </h3>
         <h3> Pavillon : ${toilette.pavillon} </h3>
         <h3> Étage : ${toilette.etage} </h3>`
-        article.addEventListener('click', () => noterToilette(article))
+        article.addEventListener('click', () => noterToilette(toilette))
         classementToilette.appendChild(article)
     });
 }
@@ -58,8 +58,9 @@ function noteMoyenne(list) {
 }
 
 /*Fonction pour noter la toilette et l'afficher en une seule page. À faire*/
-function noterToilette(article) {
-    console.log("Salut mec !", article);
+function noterToilette(toilette) {
+    const numero = encodeURIComponent(toilette.numero_local);
+    window.location.href = `html_visualisation.html?numero=${numero}`;
 }
 
 loadToilette();

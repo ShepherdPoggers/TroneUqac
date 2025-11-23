@@ -1,111 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Trône UQAC – Détails de la toilette</title>
-    <!-- Ici ils pourront brancher leur fichier CSS global -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-</head>
-<body>
-    <!-- Barre de titre / header -->
-    <header id="topBar">
-        <h1>Trône UQAC</h1>
-        <a id="lienRetour" href="index.html">← Retour à la liste des toilettes</a>
-        <!-- Eliott pourra ajuster le href si la page principale a un autre nom -->
-    </header>
-    <!-- Conteneur principal de la page -->
-    <main id="pageToilette">
-        <!-- Titre de la toilette + note globale en étoiles -->
-        <section id="enteteToilette">
-            <!-- Le JS remplira ce h2 avec le numéro de la toilette (ex.: P2-7030) -->
-            <h2 id="toiletteNumero">Numéro de la toilette</h2>
-            <!-- Étoiles pour la note globale -->
-            <div id="noteGlobale">
-                <span id="noteGlobaleTexte">Note globale :</span>
-                <div id="etoilesContainer">
-                    <!-- Les 5 étoiles, le JS peut gérer le remplissage -->
-                    <button class="etoile" data-value="1" aria-label="1 étoile">★</button>
-                    <button class="etoile" data-value="2" aria-label="2 étoiles">★</button>
-                    <button class="etoile" data-value="3" aria-label="3 étoiles">★</button>
-                    <button class="etoile" data-value="4" aria-label="4 étoiles">★</button>
-                    <button class="etoile" data-value="5" aria-label="5 étoiles">★</button>
-                </div>
-            </div>
-        </section>
-        <!-- Zone centrale : image à gauche, sliders à droite -->
-        <section id="contenuToilette">
-            <!-- Photo de la toilette -->
-            <figure id="blocPhoto">
-                <img id="toiletteImage"
-                     src="images/placeholder.jpg"
-                     alt="Photo de la toilette sélectionnée">
-                <figcaption id="toiletteEmplacement">
-                    <!-- Le JS peut écrire ici quelque chose comme “Pavillon Principal – P2-7030” -->
-                </figcaption>
-            </figure>
-            <!-- Panneau de notation détaillée -->
-            <section id="blocNotation">
-                <h3>Évaluer cette toilette</h3>
-                <!-- Propreté -->
-                <div class="critere">
-                    <label for="sliderProprete">Propreté</label>
-                    <input type="range"
-                           id="sliderProprete"
-                           name="sliderProprete"
-                           min="1"
-                           max="5"
-                           step="1"
-                           value="3">
-                    <span class="valeurCritere" id="valeurProprete">3</span>
-                </div>
-                <!-- Achalandage -->
-                <div class="critere">
-                    <label for="sliderAchalandage">Achalandage</label>
-                    <input type="range"
-                           id="sliderAchalandage"
-                           name="sliderAchalandage"
-                           min="1"
-                           max="5"
-                           step="1"
-                           value="3">
-                    <span class="valeurCritere" id="valeurAchalandage">3</span>
-                </div>
-                <!-- Quantité de papier toilette -->
-                <div class="critere">
-                    <label for="sliderPapier">Quantité de papier toilette</label>
-                    <input type="range"
-                           id="sliderPapier"
-                           name="sliderPapier"
-                           min="1"
-                           max="5"
-                           step="1"
-                           value="3">
-                    <span class="valeurCritere" id="valeurPapier">3</span>
-                </div>
-                <!-- Température de la cuvette -->
-                <div class="critere">
-                    <label for="sliderTemperature">Température de la cuvette</label>
-                    <input type="range"
-                           id="sliderTemperature"
-                           name="sliderTemperature"
-                           min="1"
-                           max="5"
-                           step="1"
-                           value="3">
-                    <span class="valeurCritere" id="valeurTemperature">3</span>
-                </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Trône UQAC – Détails de la toilette</title>
+    </head>
+    <body>
 
-            </section>
-        </section>
-        <!-- Boutons d’action -->
-        <section id="actionsToilette">
-            <button id="btnSignaler">SIGNALER</button>
-            <button id="btnEnvoyerNote">Envoyer la note</button>
-        </section>
-    </main>
-    <!-- Ici le/leur JS pour cette page de visualisation viendra se brancher -->
-    <!-- Exemple :
-    <script src="scripts/gestionPageVisualisation.js"></script>
-    -->
-</body>
+        <!-- ENTÊTE -->
+        <header>
+            <h1>Trône UQAC</h1>
+            <a href="index.html">← Retour à la liste des toilettes</a>
+        </header>
+
+            
+        <!-- CONTENU PRINCIPAL : TABLEAU 2 COLONNES -->
+        <main>
+            <table>
+                <!-- LIGNE 1 : image à gauche, étoiles + sliders à droite -->
+                <tr>
+                    <!-- COLONNE GAUCHE : IMAGE + TEXTE CENTRÉ -->
+                    <td valign="top" style="padding-right:40px;">
+                        <section id="photoSection">
+                            <div align="center">
+                                <img id="toiletteImage"
+                                    src="images/placeholder.jpg"
+                                    width="320"
+                                    height="280">
+                            </div>
+                        </section>
+                    </td>
+
+                    <!-- COLONNE DROITE : ÉTOILES + TITRE + SLIDERS -->
+                    <td valign="top">
+                        <section id="slidersSection">
+
+                            <!-- ÉTOILES GLOBALES -->
+                            <div id="noteGlobale" style="margin-bottom:20px;">
+                                <button class="etoile" data-value="1">★</button>
+                                <button class="etoile" data-value="2">★</button>
+                                <button class="etoile" data-value="3">★</button>
+                                <button class="etoile" data-value="4">★</button>
+                                <button class="etoile" data-value="5">★</button>
+                            </div>
+
+                            <h2>Évaluer cette toilette</h2>
+
+                            <table>
+                                <!-- Propreté -->
+                                <tr><td>Propreté</td></tr>
+                                <tr>
+                                    <td>
+                                        <input type="range" id="sliderProprete" min="1" max="5" value="3" style="width: 195px;">
+                                        <span id="valeurProprete">3</span>
+                                    </td>
+                                </tr>
+
+                                <!-- Achalandage -->
+                                <tr><td>Achalandage</td></tr>
+                                <tr>
+                                    <td>
+                                        <input type="range" id="sliderAchalandage" min="1" max="5" value="4" style="width: 195px;">
+                                        <span id="valeurAchalandage">4</span>
+                                    </td>
+                                </tr>
+
+                                <!-- Quantité de papier -->
+                                <tr><td>Quantité de papier toilette</td></tr>
+                                <tr>
+                                    <td>
+                                        <input type="range" id="sliderPapier" min="1" max="5" value="2" style="width: 195px;">
+                                        <span id="valeurPapier">2</span>
+                                    </td>
+                                </tr>
+
+                                <!-- Température -->
+                                <tr><td>Température de la cuvette</td></tr>
+                                <tr>
+                                    <td>
+                                        <input type="range" id="sliderTemperature" min="1" max="5" value="5" style="width: 195px;">
+                                        <span id="valeurTemperature">5</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </section>
+                    </td>
+                </tr>
+                <!-- LIGNE 2 : BOUTONS ALIGNÉS -->
+                <tr>
+                    <!-- SIGNALER à gauche -->
+                    <td align="left">
+                        <button id="btnSignaler">SIGNALER</button>
+                    </td>
+
+                    <!-- Envoyer la note à droite -->
+                    <td align="right">
+                        <button id="btnEnvoyerNote">Envoyer la note</button>
+                    </td>
+                </tr>
+            </table>
+        </main>
+    </body>
 </html>

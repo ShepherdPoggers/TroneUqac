@@ -47,25 +47,35 @@ etoiles.forEach(function(etoile) {
 const btnEnvoyerNote = document.getElementById("btnEnvoyerNote");
 const nomToilette = document.getElementById("toiletteNumero").textContent;
 
+function noterToilette() {
+    const numero = encodeURIComponent(nomToilette);
+    window.location.href =  `html_visualisation.html?numero=${numero}`;
+}
 btnEnvoyerNote.addEventListener("click", function() {
-    let valeurProprete = parseInt(sliderProprete.value);
-    let valeurAchalandage = parseInt(sliderAchalandage.value);
-    let valeurPapier = parseInt(sliderPapier.value);
-    let valeurTemperature = parseInt(sliderTemperature.value);
+    const numeroLocal = nomToilette;
+    const evaluation = {
+        global: noteGlobale,
+        proprete: parseFloat(sliderProprete.value),
+        achalandage: parseFloat(sliderAchalandage.value),
+        papier: parseFloat(sliderPapier.value),
+        temperature: parseFloat(sliderTemperature.value)
+    };
 
-    const note = {
-    globale: noteGlobale,
-    proprete: valeurProprete,
-    achalandage: valeurAchalandage,
-    papier: valeurPapier,
-    temperature: valeurTemperature
-};
-    console.log("Proprete :", valeurProprete);
-    console.log("Achalandage :", valeurAchalandage);
-    console.log("Papier :", valeurPapier);
-    console.log("Temperature :", valeurTemperature);
+    let evaluations = JSON.parse(localStorage.getItem("evaluations")) || {};
+    if (!evaluations[numeroLocal]) evaluations[numeroLocal] = [];
+    evaluations[numeroLocal].push(evaluation);
+    localStorage.setItem("evaluations", JSON.stringify(evaluations));
 
+    console.log("Proprete :", evaluation.proprete);
+    console.log("Achalandage :", evaluation.achalandage);
+    console.log("Papier :", evaluation.papier);
+    console.log("Temperature :", evaluation.temperature);
+    console.log("Note globale :", evaluation.global);
+
+    
     alert("On a bien reçu votre évaluation de la toilette " + nomToilette + "");
+
+    noterToilette();
  });
 
 /*Cette fonction s'occupe du message après un signalement. Propabelement à changer dans le future */
@@ -73,5 +83,6 @@ btnEnvoyerNote.addEventListener("click", function() {
 
  btnSignaler.addEventListener("click", function() {
     alert("Merci d'avoir signalé la toilette " + nomToilette + "");
-})
-})
+});
+});
+

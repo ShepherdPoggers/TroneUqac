@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+ /* --- Récupération du numéro dans l'URL --- */
+const params = new URLSearchParams(window.location.search);
+const toilette = params.get("toilette");
+const name = document.getElementById("toiletteNumero")
+name.textContent = toilette.numero_local
 
+console.log(toilette);
 /*Cette fonction s'occupe des sliders de critère d'évaluation. */
-
 const sliderProprete = document.getElementById("sliderProprete");
 const sliderAchalandage = document.getElementById("sliderAchalandage");
 const sliderPapier = document.getElementById("sliderPapier");
@@ -49,16 +54,16 @@ const nomToilette = document.getElementById("toiletteNumero").textContent;
 
 function noterToilette() {
     const numero = encodeURIComponent(nomToilette);
-    window.location.href =  `html_visualisation.html?numero=${numero}`;
+    window.location.href =  "index.html";
 }
 btnEnvoyerNote.addEventListener("click", function() {
     const numeroLocal = nomToilette;
     const evaluation = {
-        global: noteGlobale,
-        proprete: parseFloat(sliderProprete.value),
-        achalandage: parseFloat(sliderAchalandage.value),
-        papier: parseFloat(sliderPapier.value),
-        temperature: parseFloat(sliderTemperature.value)
+        notesGlobal: noteGlobale,
+        noteProprete: parseFloat(sliderProprete.value),
+        noteAchalandage: parseFloat(sliderAchalandage.value),
+        notePapier: parseFloat(sliderPapier.value),
+        noteTemperature: parseFloat(sliderTemperature.value)
     };
 
     let evaluations = JSON.parse(localStorage.getItem("evaluations")) || {};

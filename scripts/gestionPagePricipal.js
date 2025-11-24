@@ -59,8 +59,8 @@ function noteMoyenne(list) {
 
 /*Fonction pour noter la toilette et l'afficher en une seule page. À faire*/
 function noterToilette(toilette) {
-    const numero = encodeURIComponent(toilette.numero_local);
-    window.location.href = `html_visualisation.html?numero=${numero}`;
+    const toilettedonner = encodeURIComponent(toilette);
+    window.location.href = `html_visualisation.html?toilette=${toilettedonner}`;
 }
 
 loadToilette();

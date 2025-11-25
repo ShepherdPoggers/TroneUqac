@@ -2,6 +2,6 @@
 Un site web qui permet d'évaluer les toilettes de l'UQAC.
 
 
-**NOTE IMPORTANTE**
-Pour charger les données des toilettes, la page doit être servie via un serveur web.
-L’utilisation de l’extension Live Server de VS Code est recommandée.
+## Utilisation
+Avant de lancer l'application web il faut d'abord python. Nous utilison python 3.11.9 . 
+Pour installer les dépendances executer cette commande : pip install -r requirements.txt .

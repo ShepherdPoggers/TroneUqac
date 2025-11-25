@@ -2,7 +2,7 @@
 let toilettes = []
 /*Cette fonction permet de charger les toilettes depuis le dossier data. Elle s'assure aussi que les toilettes seront raffraichit. */
 async function loadToilette() {
-    toilettes = await fetch("data/toilettes.json").then(r => r.json());
+    toilettes = await fetch("/toilettes").then(r => r.json());
 
     tri('note')
 
@@ -59,9 +59,10 @@ function noteMoyenne(list) {
 
 /*Fonction pour noter la toilette et l'afficher en une seule page. À faire*/
 function noterToilette(toilette) {
-    const toilettedonner = encodeURIComponent(JSON.stringify(toilette));
-    window.location.href = `html_visualisation.html?toilette=${toilettedonner}`;
+    const numero = encodeURIComponent(toilette.numero_local);
+    window.location.href = `/toilette/${numero}`;
 }
+
 
 loadToilette();
 

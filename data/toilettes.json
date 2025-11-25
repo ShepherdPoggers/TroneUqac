@@ -11,6 +11,8 @@
     ],
     "notesProprete" : [],
     "notesAchalandage" : [],
+    "notesPapier" : [],
+    "notesTemperature" : [],
     "image" : "./images/p21005.jpg"
   },
   {
@@ -25,6 +27,8 @@
     ],
     "notesProprete" : [],
     "notesAchalandage" : [],
+    "notesPapier" : [],
+    "notesTemperature" : [],
     "image" : "./images/p21005.jpg"
 
   }

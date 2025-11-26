@@ -198,15 +198,15 @@ nav select {
     height: 24px;
     display: inline-block;
     background-size: cover;
-    background-image: url('../static/images/etoile-vide.png');
+    background-image: url('/static/images/etoile-vide.png');
 }
 
 /* Étoile pleine */
 .etoile.full {
-    background-image: url('../static/images/etoile-pleine.png');
+    background-image: url('/static/images/etoile-pleine.png');
 }
 
 /* Étoile demi */
 .etoile.half {
-    background-image: url('../static/images/etoile-demi.png');
+    background-image: url('/static/images/etoile-demi.png');
 }

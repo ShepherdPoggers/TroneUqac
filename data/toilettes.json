@@ -4,15 +4,20 @@
         "pavillon": "Principal",
         "etage": 2,
         "notesGlobal": [
-            1,
-            1,
-            1,
-            2.3
+            3.5
         ],
-        "notesProprete": [],
-        "notesAchalandage": [],
-        "notesPapier": [],
-        "notesTemperature": [],
+        "notesProprete": [
+            3
+        ],
+        "notesAchalandage": [
+            4
+        ],
+        "notesPapier": [
+            2
+        ],
+        "notesTemperature": [
+            5
+        ],
         "image": "./images/p21005.jpg"
     },
     {

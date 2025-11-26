@@ -93,7 +93,7 @@ function noteMoyenne(list) {
     for (let i = 0; i < list.length; i++) {
         sum += list[i];
     }
-    return Math.round(sum / list.length)
+    return Math.round((sum / list.length) * 2) / 2;
 }
 
 /*Fonction pour noter la toilette et l'afficher en une seule page. À faire*/

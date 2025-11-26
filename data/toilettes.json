@@ -4,6 +4,18 @@
         "pavillon": "Principal",
         "etage": 2,
         "notesGlobal": [
+            3.5,
+            3.5
+        ],
+        "notesProprete": [
+            3,
+            3
+        ],
+        "notesAchalandage": [
+            4,
+            4
+        ],
+        "notesPapier": [
             1,
             1,
             1,
@@ -28,7 +40,6 @@
             2
         ],
         "notesTemperature": [
-            5,
             5,
             5
         ],

@@ -1,105 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>Trône UQAC – Détails de la toilette</title>
-        <script src="{{ url_for('static', filename='scripts/gestionPageSecondaire.js') }}" defer></script>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Trône UQAC – Détails de la toilette</title>
 
-        <!-- ENTÊTE -->
-        <header>
-            <h1>Trône UQAC</h1>
-            <a href="index.html">← Retour à la liste des toilettes</a>
-            <h2 id="toiletteNumero">P2-7030</h2>
-        </header>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts/gestionPageSecondaire.js') }}" defer></script>
+</head>
 
-        <!-- CONTENU PRINCIPAL : TABLEAU 2 COLONNES -->
-        <main>
-            <table>
-                <!-- LIGNE 1 : image à gauche, étoiles + sliders à droite -->
-                <tr>
-                    <!-- COLONNE GAUCHE : IMAGE + TEXTE CENTRÉ -->
-                    <td valign="top" style="padding-right:40px;">
-                        <section id="photoSection">
-                            <div align="center">
-                                <img id="toiletteImage"
-                                    src="images/placeholder.jpg"
-                                    width="320"
-                                    height="280">
-                            </div>
-                        </section>
-                    </td>
+<body>
 
-                    <!-- COLONNE DROITE : ÉTOILES + TITRE + SLIDERS -->
-                    <td valign="top">
-                        <section id="slidersSection">
+    <!-- ===========================
+          HEADER IDENTIQUE À LA PAGE PRINCIPALE
+    ============================ -->
+    <header role="banner">
+        <div class="container">
 
-                            <!-- ÉTOILES GLOBALES -->
-                            <div id="noteGlobale">
-                                <button class="etoile" data-value="1">★</button>
-                                <button class="etoile" data-value="2">★</button>
-                                <button class="etoile" data-value="3">★</button>
-                                <button class="etoile" data-value="4">★</button>
-                                <button class="etoile" data-value="5">★</button>
-                            </div>
+            <!-- Logos -->
+            <div class="header-content">
+                <img src="{{url_for('static', filename='images/logo_toilette.png')}}"
+                     alt="Logo toilette"
+                     class="logo-toilette">
 
-                            <h2>Évaluer cette toilette</h2>
+                <img src="{{url_for('static', filename='images/logo_titre.png')}}"
+                     alt="Titre Trône UQAC"
+                     class="logo-texte">
+            </div>
 
-                            <table>
-                                <!-- Propreté -->
-                                <tr><td>Propreté</td></tr>
-                                <tr>
-                                    <td>
-                                        <input type="range" id="sliderProprete" min="1" max="5" value="3" style="width: 195px;">
-                                        <span id="valeurProprete">3</span>
-                                    </td>
-                                </tr>
+            <!-- Retour + numéro toilette -->
+            <div class="header-actions">
+                <a class="retour-btn" href="/">← Retour</a>
+                <h2 id="toiletteNumero">--</h2>
+            </div>
 
-                                <!-- Achalandage -->
-                                <tr><td>Achalandage</td></tr>
-                                <tr>
-                                    <td>
-                                        <input type="range" id="sliderAchalandage" min="1" max="5" value="4" style="width: 195px;">
-                                        <span id="valeurAchalandage">4</span>
-                                    </td>
-                                </tr>
+        </div>
+    </header>
 
-                                <!-- Quantité de papier -->
-                                <tr><td>Quantité de papier toilette</td></tr>
-                                <tr>
-                                    <td>
-                                        <input type="range" id="sliderPapier" min="1" max="5" value="2" style="width: 195px;">
-                                        <span id="valeurPapier">2</span>
-                                    </td>
-                                </tr>
 
-                                <!-- Température -->
-                                <tr><td>Température de la cuvette</td></tr>
-                                <tr>
-                                    <td>
-                                        <input type="range" id="sliderTemperature" min="1" max="5" value="5" style="width: 195px;">
-                                        <span id="valeurTemperature">5</span>
-                                    </td>
-                                </tr>
-                            </table>
+    <!-- ===========================
+          PAGE TOILETTE (layout moderne)
+    ============================ -->
+    <main class="toilette-layout">
 
-                        </section>
-                    </td>
-                </tr>
-                <!-- LIGNE 2 : BOUTONS ALIGNÉS -->
-                <tr>
-                    <!-- SIGNALER à gauche -->
-                    <td align="left">
-                        <button id="btnSignaler">SIGNALER</button>
-                    </td>
+        <!-- PHOTO -->
+        <section class="photo-section">
+            <img id="toiletteImage"
+                 src="/static/images/placeholder.jpg"
+                 alt="Photo de la toilette">
+        </section>
 
-                    <!-- Envoyer la note à droite -->
-                    <td align="right">
-                        <button id="btnEnvoyerNote">Envoyer la note</button>
-                    </td>
-                </tr>
-            </table>
-        </main>
-    </body>
+        <!-- ÉTOILES + SLIDERS -->
+        <section class="sliders-section">
+
+            <!-- Étoiles globales -->
+            <div id="noteGlobale" class="etoiles-globales">
+                <span class="etoile" data-value="1"></span>
+                <span class="etoile" data-value="2"></span>
+                <span class="etoile" data-value="3"></span>
+                <span class="etoile" data-value="4"></span>
+                <span class="etoile" data-value="5"></span>
+            </div>
+
+
+            <h2>Évaluer cette toilette</h2>
+
+            <div class="slider-block">
+
+                <label>Propreté</label>
+                <div class="slider-line">
+                    <input type="range" id="sliderProprete" min="1" max="5" value="3">
+                    <span id="valeurProprete">3</span>
+                </div>
+
+                <label>Achalandage</label>
+                <div class="slider-line">
+                    <input type="range" id="sliderAchalandage" min="1" max="5" value="4">
+                    <span id="valeurAchalandage">4</span>
+                </div>
+
+                <label>Quantité de papier toilette</label>
+                <div class="slider-line">
+                    <input type="range" id="sliderPapier" min="1" max="5" value="2">
+                    <span id="valeurPapier">2</span>
+                </div>
+
+                <label>Température de la cuvette</label>
+                <div class="slider-line">
+                    <input type="range" id="sliderTemperature" min="1" max="5" value="5">
+                    <span id="valeurTemperature">5</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- BOUTONS -->
+        <section class="buttons-row">
+            <button id="btnSignaler" class="danger">SIGNALER</button>
+            <button id="btnEnvoyerNote" class="primary">Envoyer la note</button>
+        </section>
+
+    </main>
+
+</body>
 </html>

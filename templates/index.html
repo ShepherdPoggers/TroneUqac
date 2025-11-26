@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trone Uqac</title>
+    <title>Trône UQAC</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
     <script src="{{ url_for('static', filename='scripts/gestionPagePricipal.js') }}" defer></script>
 </head>
 
@@ -13,17 +14,17 @@
     <header role="banner">
         <div class="container">
             <div class="header-content">
-                <h1>Trone Uqac</h1>
+                <img src="{{url_for('static', filename='images/logo_toilette.png')}}" alt="Logo Trône UQAC" class="logo-toilette">
+                <img src="{{url_for('static', filename='images/logo_titre.png')}}" alt="Titre Trône UQAC" class="logo-texte">
             </div>
             <nav aria-label="Navigation principale">
-                <label for="triToilettes"></label>
+                <label for="triToilettes" class="tri-label">Trier par : </label>
                 <select name="triToilettes" id="triToilettes">
                     <option value="note">Note</option>
                     <option value="pavillon">Pavillon</option>
                     <option value="etage">Étage</option>
                 </select>
             </nav>
-        </div>
         </div>
     </header>
     

@@ -1,0 +1,212 @@
+/* --- 1. RESET / NORMALISATION --- */
+
+/* Supprime les marges, paddings et bordures par défaut */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Supprime le style par défaut des éléments interactifs */
+button,
+select,
+input {
+    font: inherit;
+    color: inherit;
+}
+
+/* --- 2. VARIABLES GLOBALES --- */
+
+:root {
+    /* Palette de couleurs */
+    --primary-color: #5A7411; /* vert uqac */
+    --dark1-color: #171A05; /* vert très foncé */
+    --dark2-color: #2B2F09; /* vert foncé */
+    --light1-color: #EEF3C3; /* vert très clair */
+    --light2-color: #E2EB98; /* vert clair */
+
+    /* Typographie */
+    --font-main: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
+
+    /* Couleurs de texte */
+    --text-color: var(--dark1-color);
+    --muted-color: #6C757D;
+
+    /* Espacements */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+}
+
+/* --- 3. RÉGLAGES GLOBAUX DU BODY --- */
+body {
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: var(--light1-color);
+}
+
+/* --- 4. RÈGLES UTILITAIRES GLOBALES --- */
+
+/* Images fluides */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Liens sans soulignement par défaut */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- STRUCTURE DU HEADER (layout) --- */
+
+header {
+    background-color: var(--primary-color);
+    padding: 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 var(--spacing-md);
+    padding: var(--spacing-md) 0;
+}
+
+/* Alignement horizontal du logo toilette + texte */
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* Taille des logos */
+.logo-toilette {
+    height: 150px;
+    display: block;
+}
+
+.logo-texte {
+    height: 150px;
+    display: block;
+}
+
+/* Tri - alignement et structure */
+nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* Texte "Trier par :" */
+.tri-label {
+    color: var(--light1-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* la navigation avec le select */
+nav select {
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    border: none;
+    background-color: var(--light2-color);
+    color: var(--dark1-color);
+    font-size: 1rem;
+}
+
+/* --- SECTION TOILETTES (layout) --- */
+
+/* Section contenant toutes les cartes de toilettes */
+#toiletteClassement {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Carte individuelelle de toilette */
+.toilette-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    background-color: var(--light2-color);
+    border: 2px solid var(--dark2-color);
+    border-radius: 16px;
+    padding: var(--spacing-lg);
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.toilette-image img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.toilette-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--spacing-md);
+}
+
+.toilette-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.toilette-details p {
+    display: grid;
+    grid-template-columns: 120px auto;
+    font-size: 1rem;
+}
+
+.toilette-details span {
+    font-weight: bold;
+}
+
+/* --- ÉTOILES --- */
+
+/* Conteneur */
+.etoiles {
+    display: flex;
+    gap: 4px;
+}
+
+/* Base : étoile vide */
+.etoile{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: cover;
+    background-image: url('../static/images/etoile-vide.png');
+}
+
+/* Étoile pleine */
+.etoile.full {
+    background-image: url('../static/images/etoile-pleine.png');
+}
+
+/* Étoile demi */
+.etoile.half {
+    background-image: url('../static/images/etoile-demi.png');
+}

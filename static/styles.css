@@ -210,3 +210,169 @@ nav select {
 .etoile.half {
     background-image: url('/static/images/etoile-demi.png');
 }
+
+/* --- PAGES TOILETTES INDIVIDUELLES --- */
+
+/* Layout global */
+.toilette-layout {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--light2-color);
+    border-radius: 12px;
+    border: 2px solid var(--dark2-color);
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    column-gap: 40px;
+    row-gap: 30px;
+}
+
+/* Section gauche: photo */
+.photo-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--dark2-color);
+}
+
+/* Section droite: sliders */
+.sliders-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.etoiles-globales {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.etoiles-globales .etoile {
+    width: 40px;
+    height: 40px;
+}
+
+/* Slider group */
+.slider-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.slider-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slider-line input[type="range"] {
+    flex: 1;
+}
+
+/* Labels */
+.slider-block label {
+    font-weight: bold;
+    margin-bottom: -8px;
+}
+
+/* --- BOUTONS --- */
+.buttons-row {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button.primary {
+    background-color: var(--primary-color);
+    color: var(--light1-color);
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button.danger {
+    background-color: #B3261E;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ============================
+   SLIDERS — STYLE PERSONNALISÉ
+============================ */
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 12px;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* TRACK */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 12px;
+    border-radius: 6px;
+
+    /* dégradé rempli / vide */
+    background: linear-gradient(
+        to right,
+        var(--primary-color) 0%,
+        var(--primary-color) var(--percent),
+        var(--light1-color) var(--percent),
+        var(--light1-color) 100%
+    );
+
+    /* contraste ajouté selon ta demande */
+    border: 2px solid var(--primary-color);
+}
+
+/* THUMB */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 2px solid white;
+    margin-top: -8px;
+}
+
+/* ------- FIREFOX ------- */
+
+/* Ligne vide */
+input[type="range"]::-moz-range-track {
+    height: 12px;
+    border-radius: 6px;
+    background: var(--light1-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* Ligne pleine */
+input[type="range"]::-moz-range-progress {
+    height: 12px;
+    border-radius: 6px;
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* Thumb */
+input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 2px solid white;
+}

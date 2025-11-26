@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", async () => {
+    /* Mise à jour visuelle des sliders (Chrome/Safari) */
+    document.querySelectorAll('input[type="range"]').forEach(slider => {
+        function update() {
+            const min = slider.min ?? 0;
+            const max = slider.max ?? 100;
+            const percent = ((slider.value - min) / (max - min)) * 100;
+            slider.style.setProperty('--percent', percent + '%');
+        }
+        slider.addEventListener('input', update);
+        update();
+    });
+
     /* Récupération du numéro dans l'URL */
     const numero = window.location.pathname.split("/").pop(); //Modifié par Elliot avec l'ajout du python
     const response = await fetch(`/api/toilette/${numero}`);

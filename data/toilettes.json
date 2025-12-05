@@ -50,27 +50,37 @@
             3.5,
             3.5,
             5,
-            4
+            4,
+            3.5,
+            3.5
         ],
         "notesProprete": [
             3,
             3,
             5,
-            5
+            5,
+            3,
+            3
         ],
         "notesAchalandage": [
             4,
             4,
             5,
-            1
+            1,
+            4,
+            4
         ],
         "notesPapier": [
             2,
             2,
             4,
-            5
+            5,
+            2,
+            2
         ],
         "notesTemperature": [
+            5,
+            5,
             5,
             5,
             5,

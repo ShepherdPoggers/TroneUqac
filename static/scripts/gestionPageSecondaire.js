@@ -120,11 +120,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         noterToilette();
     });
 
-    /*Cette fonction s'occupe du message après un signalement. Propabelement à changer dans le future */
-    const btnSignaler = document.getElementById("btnSignaler");
+    /*Message du button d'instruction.*/
+    const btnInstruction = document.getElementById("btnInstruction");
 
-    btnSignaler.addEventListener("click", function () {
-        alert("Merci d'avoir signalé la toilette " + nomToilette + "");
+    btnInstruction.addEventListener("click", function () {
+        alert("Voici les instructions à suivre pour évaluer la toilette " + nomToilette + ":\n\n" +
+        "La toilette sera évalué par 4 critères distincts, notés à l'aide des sliders ci-dessous.\n" +
+        "• 1 -> la note la plus basse\n" +
+        "• 5 -> la note la plus haute.\n" +
+        "• Les étoiles affichent la note moyenne selon les critères d'évaluation que vous avez donnés.\n\n" +
+        "Après avoir évaluer la toilette, appuyez sur « Envoyer la note». Votre évaluation sera enregistrée et le site vous renverra à la page principal.");
     });
 
 })

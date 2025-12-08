@@ -1,2 +1,5 @@
 troneUqacEnv/
 __pycache__/
+.venv/
+.vscode/
+

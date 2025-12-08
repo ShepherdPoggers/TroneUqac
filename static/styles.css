@@ -79,9 +79,10 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0 var(--spacing-md);
+    gap: var(--spacing-lg);
+    width: 90%;
+    margin: 0 auto;
     padding: var(--spacing-md) 0;
 }
 
@@ -108,7 +109,12 @@ nav {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
+    margin-left: auto;
 }
+nav {
+    margin-right: 150px; /* ou 100px selon ce que tu veux */
+}
+
 
 /* Texte "Trier par :" */
 .tri-label {
@@ -142,22 +148,28 @@ nav select {
 /* Carte individuelelle de toilette */
 .toilette-card {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
+    align-items: stretch;      /* au lieu de center */
+    gap: var(--spacing-md);   /* un peu moins d’espace entre image et texte */
     background-color: var(--light2-color);
     border: 2px solid var(--dark2-color);
     border-radius: 16px;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg);  /* moins de padding haut/bas */
     max-width: 550px;
     width: 100%;
     margin: 0 auto;
 }
 
+.toilette-image {
+    flex: 0 0 180px;          /* largeur fixe raisonnable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .toilette-image img {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .toilette-info {
@@ -375,4 +387,42 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
     background: var(--primary-color);
     border: 2px solid white;
+}
+
+
+
+/* Conteneur global des filtres */
+#filtres-toilettes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Une ligne de filtres (Pavillon / Type / Étage) */
+.filtre-groupe {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+}
+
+/* Titre du groupe */
+.filtre-titre {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+/* Boutons de filtre */
+.filtre-btn {
+    border-radius: 12px;
+    padding: 2px 8px;
+    border: 1px solid #556b2f;
+    background-color: #f5f7c0;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* Bouton sélectionné */
+.filtre-btn.filtre-actif {
+    background-color: #f2a623;
 }

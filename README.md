@@ -10,3 +10,6 @@ Pour installer les dépendances, exécutez cette commande : pip install -r requi
 ### Lancement
 Une fois les prérequis installés, il faut se mettre à la racine du projet, soit dans 
 le fichier TroneUqac, puis exécuter la commande : python main.py .
+
+## Crédit
+Merci à ChatGPT pour nous avoir fournit une page de connexion viable.

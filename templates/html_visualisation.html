@@ -9,49 +9,39 @@
 </head>
 
 <body>
-
     <!-- ===========================
           HEADER IDENTIQUE À LA PAGE PRINCIPALE
     ============================ -->
     <header role="banner">
         <div class="container">
-
             <!-- Logos -->
             <div class="header-content">
                 <img src="{{url_for('static', filename='images/logo_toilette.png')}}"
                      alt="Logo toilette"
                      class="logo-toilette">
-
                 <img src="{{url_for('static', filename='images/logo_titre.png')}}"
                      alt="Titre Trône UQAC"
                      class="logo-texte">
             </div>
-
             <!-- Retour + numéro toilette -->
             <div class="header-actions">
                 <a class="retour-btn" href="/">← Retour</a>
                 <h2 id="toiletteNumero">--</h2>
             </div>
-
         </div>
     </header>
-
-
     <!-- ===========================
           PAGE TOILETTE (layout moderne)
     ============================ -->
     <main class="toilette-layout">
-
         <!-- PHOTO -->
         <section class="photo-section">
             <img id="toiletteImage"
                  src="/static/images/placeholder.jpg"
                  alt="Photo de la toilette">
         </section>
-
         <!-- ÉTOILES + SLIDERS -->
         <section class="sliders-section">
-
             <!-- Étoiles globales -->
             <div id="noteGlobale" class="etoiles-globales">
                 <span class="etoile" data-value="1"></span>
@@ -60,40 +50,30 @@
                 <span class="etoile" data-value="4"></span>
                 <span class="etoile" data-value="5"></span>
             </div>
-
-
             <h2>Évaluer cette toilette</h2>
-
             <div class="slider-block">
-
                 <label>Propreté</label>
                 <div class="slider-line">
                     <input type="range" id="sliderProprete" min="1" max="5" value="3">
                     <span id="valeurProprete">3</span>
                 </div>
-
                 <label>Achalandage</label>
                 <div class="slider-line">
                     <input type="range" id="sliderAchalandage" min="1" max="5" value="4">
                     <span id="valeurAchalandage">4</span>
                 </div>
-
                 <label>Quantité de papier toilette</label>
                 <div class="slider-line">
                     <input type="range" id="sliderPapier" min="1" max="5" value="2">
                     <span id="valeurPapier">2</span>
                 </div>
-
                 <label>Température de la cuvette</label>
                 <div class="slider-line">
                     <input type="range" id="sliderTemperature" min="1" max="5" value="5">
                     <span id="valeurTemperature">5</span>
                 </div>
-
             </div>
-
         </section>
-
         <!-- BOUTONS -->
         <section class="buttons-row">
             <button id="btnInstruction" class="danger">Instruction</button>

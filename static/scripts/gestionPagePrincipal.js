@@ -197,3 +197,24 @@ function noterToilette(toilette) {
 
 loadToilette();
 
+// ===========================
+// BOUTON DÉCONNEXION
+// ===========================
+const btnLogout = document.getElementById("btnLogout");
+if (btnLogout) {
+    btnLogout.addEventListener("click", () => {
+        window.location.href = "/logout";
+    });
+}
+
+// ===========================
+// BOUTON RETOUR
+// ===========================
+const btnBack = document.getElementById("btnBack");
+if (btnBack) {
+    btnBack.addEventListener("click", () => {
+        window.location.href = "/back";
+    });
+}
+    
+

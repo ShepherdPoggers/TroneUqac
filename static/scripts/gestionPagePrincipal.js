@@ -198,14 +198,23 @@ function noterToilette(toilette) {
 loadToilette();
 
 // ===========================
-// BOUTON DÉCONNEXION
+// BOUTONS DÉCONNEXION
 // ===========================
-const btnLogout = document.getElementById("btnLogout");
-if (btnLogout) {
-    btnLogout.addEventListener("click", () => {
-        window.location.href = "/logout";
-    });
-}
+
+const logoutButtons = [
+    document.getElementById("btnLogoutDesktop"),
+    document.getElementById("btnLogoutMobile"),
+    document.getElementById("btnLogout") // au cas où il existe encore
+];
+
+logoutButtons.forEach(btn => {
+    if (btn) {
+        btn.addEventListener("click", () => {
+            window.location.href = "/logout";
+        });
+    }
+});
+
 
 // ===========================
 // BOUTON RETOUR
@@ -216,5 +225,20 @@ if (btnBack) {
         window.location.href = "/back";
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("toggleFiltres");
+    const filtres = document.getElementById("filtres-toilettes");
+
+    if (toggleBtn && filtres) {
+        toggleBtn.addEventListener("click", () => {
+            filtres.classList.toggle("open");
+            toggleBtn.textContent = filtres.classList.contains("open")
+                ? "Cacher les filtres"
+                : "Afficher les filtres";
+        });
+    }
+});
+
     
 

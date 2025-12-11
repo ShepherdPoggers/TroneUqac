@@ -13,10 +13,21 @@
     <!-- En-tête -->
     <header role="banner">
         <div class="container">
+
             <div class="header-content">
-                <img src="{{url_for('static', filename='images/logo_toilette.png')}}" alt="Logo Trône UQAC" class="logo-toilette">
-                <img src="{{url_for('static', filename='images/logo_titre.png')}}" alt="Titre Trône UQAC" class="logo-texte">
+                <img src="{{url_for('static', filename='images/logo_toilette.png')}}" alt="Logo Trône UQAC"
+                    class="logo-toilette">
+                <img src="{{url_for('static', filename='images/logo_titre.png')}}" alt="Titre Trône UQAC"
+                    class="logo-texte">
             </div>
+
+            <!-- Boutons MOBILE -->
+            <div class="header-buttons-mobile">
+                <button id="toggleFiltres" class="toggle-filtres-btn">Afficher les filtres ⬇</button>
+                <button id="btnLogoutMobile" class="logout-btn">Déconnexion</button>
+            </div>
+            
+
             <!-- FILTRES -->
             <div id="filtres-toilettes">
                 <!-- Pavillon -->
@@ -47,20 +58,22 @@
                     <!-- 4, 5, etc. si besoin -->
                 </div>
                 <!-- Tri -->
-                 <div class="filtre-groupe">
+                <div class="filtre-groupe">
                     <span class="filtre-titre">Trier par :</span>
-                        <button type="button" class="filtre-btn filtre-actif" data-tri="note">Note globale</button>
-                        <button type="button" class="filtre-btn" data-tri="proprete">Propreté</button>
-                        <button type="button" class="filtre-btn" data-tri="achalandage">Achalandage</button>
-                        <button type="button" class="filtre-btn" data-tri="papier">Papier</button>
-                        <button type="button" class="filtre-btn" data-tri="temperature">Température</button>
-                 </div>
+                    <button type="button" class="filtre-btn filtre-actif" data-tri="note">Note globale</button>
+                    <button type="button" class="filtre-btn" data-tri="proprete">Propreté</button>
+                    <button type="button" class="filtre-btn" data-tri="achalandage">Achalandage</button>
+                    <button type="button" class="filtre-btn" data-tri="papier">Papier</button>
+                    <button type="button" class="filtre-btn" data-tri="temperature">Température</button>
+                </div>
             </div>
-            <button id="btnLogout" class="logout-btn">Déconnexion</button>
+            <!-- Bouton desktop -->
+            <button id="btnLogoutDesktop" class="logout-btn">Déconnexion</button>
         </div>
     </header>
     <!-- Section pour le classement des toilettes -->
     <section id="toiletteClassement">
     </section>
 </body>
+
 </html>

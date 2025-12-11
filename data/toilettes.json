@@ -4,11 +4,39 @@
         "pavillon": "Principal",
         "type": "Mixte",
         "etage": 2,
-        "notesGlobal": [3.5, 3.5, 1, 4],
-        "notesProprete": [4, 3, 5, 1, 4],
-        "notesAchalandage": [3, 4, 5, 1, 4],
-        "notesPapier": [4, 2, 2, 1, 2],
-        "notesTemperature": [5, 5, 1, 5],
+        "notesGlobal": [
+            3.5,
+            3.5,
+            1,
+            4
+        ],
+        "notesProprete": [
+            4,
+            3,
+            5,
+            1,
+            4
+        ],
+        "notesAchalandage": [
+            3,
+            4,
+            5,
+            1,
+            4
+        ],
+        "notesPapier": [
+            4,
+            2,
+            2,
+            1,
+            2
+        ],
+        "notesTemperature": [
+            5,
+            5,
+            1,
+            5
+        ],
         "image": "./images/p21005.jpg"
     },
     {
@@ -16,11 +44,50 @@
         "pavillon": "Humaniste",
         "type": "Homme",
         "etage": 3,
-        "notesGlobal": [3.5, 4.8, 5, 1.9, 3.5, 3.5, 5, 4, 3.5, 3.5],
-        "notesProprete": [3, 3, 5, 5, 3, 3],
-        "notesAchalandage": [4, 4, 5, 1, 4, 4],
-        "notesPapier": [2, 2, 4, 5, 2, 2],
-        "notesTemperature": [5, 5, 5, 5, 5, 5],
+        "notesGlobal": [
+            3.5,
+            4.8,
+            5,
+            1.9,
+            3.5,
+            3.5,
+            5,
+            4,
+            3.5,
+            3.5
+        ],
+        "notesProprete": [
+            3,
+            3,
+            5,
+            5,
+            3,
+            3
+        ],
+        "notesAchalandage": [
+            4,
+            4,
+            5,
+            1,
+            4,
+            4
+        ],
+        "notesPapier": [
+            2,
+            2,
+            4,
+            5,
+            2,
+            2
+        ],
+        "notesTemperature": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ],
         "image": "./images/p21005.jpg"
     },
     {
@@ -28,11 +95,36 @@
         "pavillon": "Humaniste",
         "type": "Homme",
         "etage": 1,
-        "notesGlobal": [4, 3.5, 4, 4.5],
-        "notesProprete": [4, 4, 3, 5],
-        "notesAchalandage": [2, 3, 3, 2],
-        "notesPapier": [5, 4, 4, 5],
-        "notesTemperature": [3, 4, 4, 3],
+        "notesGlobal": [
+            4,
+            3.5,
+            4,
+            4.5
+        ],
+        "notesProprete": [
+            4,
+            4,
+            3,
+            5
+        ],
+        "notesAchalandage": [
+            2,
+            3,
+            3,
+            2
+        ],
+        "notesPapier": [
+            5,
+            4,
+            4,
+            5
+        ],
+        "notesTemperature": [
+            3,
+            4,
+            4,
+            3
+        ],
         "image": "./images/h11102.jpg"
     },
     {
@@ -40,11 +132,41 @@
         "pavillon": "Humaniste",
         "type": "Femme",
         "etage": 2,
-        "notesGlobal": [2.5, 3, 3, 2],
-        "notesProprete": [3, 3, 2, 2],
-        "notesAchalandage": [4, 4, 3, 5],
-        "notesPapier": [2, 2, 3, 2],
-        "notesTemperature": [4, 3, 4, 4],
+        "notesGlobal": [
+            2.5,
+            3,
+            3,
+            2,
+            3
+        ],
+        "notesProprete": [
+            3,
+            3,
+            2,
+            2,
+            3
+        ],
+        "notesAchalandage": [
+            4,
+            4,
+            3,
+            5,
+            2
+        ],
+        "notesPapier": [
+            2,
+            2,
+            3,
+            2,
+            4
+        ],
+        "notesTemperature": [
+            4,
+            3,
+            4,
+            4,
+            2
+        ],
         "image": "./images/h32108.jpg"
     },
     {
@@ -52,11 +174,36 @@
         "pavillon": "Principal",
         "type": "Mixte",
         "etage": 1,
-        "notesGlobal": [5, 4.5, 4.5, 5],
-        "notesProprete": [5, 5, 4, 5],
-        "notesAchalandage": [2, 2, 3, 2],
-        "notesPapier": [5, 5, 4, 5],
-        "notesTemperature": [4, 4, 5, 5],
+        "notesGlobal": [
+            5,
+            4.5,
+            4.5,
+            5
+        ],
+        "notesProprete": [
+            5,
+            5,
+            4,
+            5
+        ],
+        "notesAchalandage": [
+            2,
+            2,
+            3,
+            2
+        ],
+        "notesPapier": [
+            5,
+            5,
+            4,
+            5
+        ],
+        "notesTemperature": [
+            4,
+            4,
+            5,
+            5
+        ],
         "image": "./images/p11201.jpg"
     },
     {
@@ -64,11 +211,36 @@
         "pavillon": "Principal",
         "type": "Homme",
         "etage": 3,
-        "notesGlobal": [3, 2.5, 3.5, 3],
-        "notesProprete": [3, 2, 3, 4],
-        "notesAchalandage": [4, 3, 4, 5],
-        "notesPapier": [2, 3, 2, 3],
-        "notesTemperature": [5, 4, 4, 3],
+        "notesGlobal": [
+            3,
+            2.5,
+            3.5,
+            3
+        ],
+        "notesProprete": [
+            3,
+            2,
+            3,
+            4
+        ],
+        "notesAchalandage": [
+            4,
+            3,
+            4,
+            5
+        ],
+        "notesPapier": [
+            2,
+            3,
+            2,
+            3
+        ],
+        "notesTemperature": [
+            5,
+            4,
+            4,
+            3
+        ],
         "image": "./images/p33306.jpg"
     },
     {
@@ -76,11 +248,36 @@
         "pavillon": "Sportif",
         "type": "Mixte",
         "etage": 1,
-        "notesGlobal": [3, 3.5, 3, 3],
-        "notesProprete": [4, 3, 2, 3],
-        "notesAchalandage": [5, 4, 4, 5],
-        "notesPapier": [3, 3, 3, 2],
-        "notesTemperature": [4, 4, 4, 4],
+        "notesGlobal": [
+            3,
+            3.5,
+            3,
+            3
+        ],
+        "notesProprete": [
+            4,
+            3,
+            2,
+            3
+        ],
+        "notesAchalandage": [
+            5,
+            4,
+            4,
+            5
+        ],
+        "notesPapier": [
+            3,
+            3,
+            3,
+            2
+        ],
+        "notesTemperature": [
+            4,
+            4,
+            4,
+            4
+        ],
         "image": "./images/s11404.jpg"
     },
     {
@@ -88,11 +285,36 @@
         "pavillon": "Sportif",
         "type": "Homme",
         "etage": 2,
-        "notesGlobal": [4, 4, 4.5, 4],
-        "notesProprete": [5, 4, 4, 5],
-        "notesAchalandage": [3, 2, 3, 3],
-        "notesPapier": [4, 3, 4, 4],
-        "notesTemperature": [3, 4, 4, 3],
+        "notesGlobal": [
+            4,
+            4,
+            4.5,
+            4
+        ],
+        "notesProprete": [
+            5,
+            4,
+            4,
+            5
+        ],
+        "notesAchalandage": [
+            3,
+            2,
+            3,
+            3
+        ],
+        "notesPapier": [
+            4,
+            3,
+            4,
+            4
+        ],
+        "notesTemperature": [
+            3,
+            4,
+            4,
+            3
+        ],
         "image": "./images/s22509.jpg"
     },
     {
@@ -100,11 +322,36 @@
         "pavillon": "Sportif",
         "type": "Femme",
         "etage": 3,
-        "notesGlobal": [2, 2.5, 3, 2],
-        "notesProprete": [2, 3, 2, 2],
-        "notesAchalandage": [5, 5, 4, 5],
-        "notesPapier": [1, 2, 1, 2],
-        "notesTemperature": [3, 3, 3, 4],
+        "notesGlobal": [
+            2,
+            2.5,
+            3,
+            2
+        ],
+        "notesProprete": [
+            2,
+            3,
+            2,
+            2
+        ],
+        "notesAchalandage": [
+            5,
+            5,
+            4,
+            5
+        ],
+        "notesPapier": [
+            1,
+            2,
+            1,
+            2
+        ],
+        "notesTemperature": [
+            3,
+            3,
+            3,
+            4
+        ],
         "image": "./images/s33611.jpg"
     },
     {
@@ -112,11 +359,36 @@
         "pavillon": "Humaniste",
         "type": "Mixte",
         "etage": 4,
-        "notesGlobal": [4.5, 4, 5, 4.5],
-        "notesProprete": [5, 4, 5, 5],
-        "notesAchalandage": [2, 2, 3, 2],
-        "notesPapier": [5, 4, 5, 5],
-        "notesTemperature": [4, 5, 4, 4],
+        "notesGlobal": [
+            4.5,
+            4,
+            5,
+            4.5
+        ],
+        "notesProprete": [
+            5,
+            4,
+            5,
+            5
+        ],
+        "notesAchalandage": [
+            2,
+            2,
+            3,
+            2
+        ],
+        "notesPapier": [
+            5,
+            4,
+            5,
+            5
+        ],
+        "notesTemperature": [
+            4,
+            5,
+            4,
+            4
+        ],
         "image": "./images/h44702.jpg"
     },
     {
@@ -124,11 +396,36 @@
         "pavillon": "Principal",
         "type": "Femme",
         "etage": 4,
-        "notesGlobal": [3, 3, 3.5, 3],
-        "notesProprete": [3, 3, 4, 3],
-        "notesAchalandage": [3, 4, 4, 4],
-        "notesPapier": [5, 4, 3, 4],
-        "notesTemperature": [2, 3, 3, 2],
+        "notesGlobal": [
+            3,
+            3,
+            3.5,
+            3
+        ],
+        "notesProprete": [
+            3,
+            3,
+            4,
+            3
+        ],
+        "notesAchalandage": [
+            3,
+            4,
+            4,
+            4
+        ],
+        "notesPapier": [
+            5,
+            4,
+            3,
+            4
+        ],
+        "notesTemperature": [
+            2,
+            3,
+            3,
+            2
+        ],
         "image": "./images/p44801.jpg"
     },
     {
@@ -136,12 +433,36 @@
         "pavillon": "Sportif",
         "type": "Mixte",
         "etage": 4,
-        "notesGlobal": [1.5, 2, 1, 2],
-        "notesProprete": [2, 2, 1, 1],
-        "notesAchalandage": [5, 5, 4, 5],
-        "notesPapier": [1, 1, 2, 1],
-        "notesTemperature": [3, 2, 3, 2],
+        "notesGlobal": [
+            1.5,
+            2,
+            1,
+            2
+        ],
+        "notesProprete": [
+            2,
+            2,
+            1,
+            1
+        ],
+        "notesAchalandage": [
+            5,
+            5,
+            4,
+            5
+        ],
+        "notesPapier": [
+            1,
+            1,
+            2,
+            1
+        ],
+        "notesTemperature": [
+            3,
+            2,
+            3,
+            2
+        ],
         "image": "./images/s44907.jpg"
     }
-
 ]

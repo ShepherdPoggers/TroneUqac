@@ -1,6 +1,7 @@
-/* --- 1. RESET / NORMALISATION --- */
+/* ========================================================================
+    1. RESET & NORMALISATION
+======================================================================== */
 
-/* Supprime les marges, paddings et bordures par défaut */
 *,
 *::before,
 *::after {
@@ -9,7 +10,6 @@
     box-sizing: border-box;
 }
 
-/* Supprime le style par défaut des éléments interactifs */
 button,
 select,
 input {
@@ -17,50 +17,11 @@ input {
     color: inherit;
 }
 
-/* --- 2. VARIABLES GLOBALES --- */
-
-:root {
-    /* Palette de couleurs */
-    --primary-color: #5A7411; /* vert uqac */
-    --dark1-color: #171A05; /* vert très foncé */
-    --dark2-color: #2B2F09; /* vert foncé */
-    --light1-color: #EEF3C3; /* vert très clair */
-    --light2-color: #E2EB98; /* vert clair */
-
-    /* Typographie */
-    --font-main: 'Arial', sans-serif;
-    --font-size-base: 16px;
-    --line-height-base: 1.5;
-
-    /* Couleurs de texte */
-    --text-color: var(--dark1-color);
-    --muted-color: #6C757D;
-
-    /* Espacements */
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-}
-
-/* --- 3. RÉGLAGES GLOBAUX DU BODY --- */
-body {
-    font-family: var(--font-main);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    color: var(--text-color);
-    background-color: var(--light1-color);
-}
-
-/* --- 4. RÈGLES UTILITAIRES GLOBALES --- */
-
-/* Images fluides */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Liens sans soulignement par défaut */
 a {
     color: var(--primary-color);
     text-decoration: none;
@@ -70,112 +31,194 @@ a:hover {
     text-decoration: underline;
 }
 
-/* --- STRUCTURE DU HEADER (layout) --- */
+/* ========================================================================
+    2. VARIABLES GLOBALES
+======================================================================== */
+
+:root {
+    --primary-color: #5A7411;
+    --dark1-color: #171A05;
+    --dark2-color: #2B2F09;
+    --light1-color: #EEF3C3;
+    --light2-color: #E2EB98;
+
+    --font-main: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+
+    --border-radius: 12px;
+}
+
+/* ========================================================================
+    3. GLOBAL BODY / LAYOUT
+======================================================================== */
+
+body {
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color, var(--dark1-color));
+    background-color: var(--light1-color);
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* ========================================================================
+    4. HEADER — VERSION DESKTOP
+======================================================================== */
 
 header {
     background-color: var(--primary-color);
-    padding: 0;
-}
-
-header .container {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-    width: 90%;
-    margin: 0 auto;
     padding: var(--spacing-md) 0;
 }
 
-/* Alignement horizontal du logo toilette + texte */
+header .container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    /* Logos | Filtres | Déconnexion */
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* Logos */
 .header-content {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
 }
 
-/* Taille des logos */
-.logo-toilette {
-    height: 150px;
-    display: block;
-}
-
+.logo-toilette,
 .logo-texte {
     height: 150px;
+}
+
+/* Zone filtres (centrée sur bureau) */
+#filtres-toilettes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+/* Bouton mobile caché en desktop */
+.header-buttons-mobile {
+    display: none;
+}
+
+/* Bouton desktop visible par défaut */
+#btnLogoutDesktop {
     display: block;
 }
 
-/* Tri - alignement et structure */
-nav {
+
+/* Bouton Déconnexion */
+.logout-btn {
+    background-color: var(--dark2-color);
+    color: var(--light1-color);
+    border: 2px solid var(--dark1-color);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.25s ease;
+}
+
+.logout-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* HEADER de la page individuelle : actions à droite */
+.header-actions {
+    grid-column: 3;
+    /* place dans la 3e colonne du grid */
+    justify-self: end;
+    /* colle à droite */
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    margin-left: auto;
-}
-nav {
-    margin-right: 150px; /* ou 100px selon ce que tu veux */
+    gap: var(--spacing-md);
 }
 
-
-/* Texte "Trier par :" */
-.tri-label {
-    color: var(--light1-color);
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-/* la navigation avec le select */
-nav select {
-    padding: var(--spacing-sm);
-    border-radius: 4px;
-    border: none;
-    background-color: var(--light2-color);
+.back-btn {
+    background-color: var(--light1-color);
     color: var(--dark1-color);
-    font-size: 1rem;
+    border: 2px solid var(--dark2-color);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-/* --- SECTION TOILETTES (layout) --- */
+.back-btn:hover {
+    background-color: var(--light2-color);
+}
 
-/* Section contenant toutes les cartes de toilettes */
+
+/* ========================================================================
+    5. FILTRES
+======================================================================== */
+
+.filtre-groupe {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.filtre-titre {
+    font-weight: bold;
+}
+
+.filtre-btn {
+    border-radius: 12px;
+    padding: 4px 10px;
+    background-color: var(--light1-color);
+    border: 1px solid var(--dark2-color);
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.filtre-btn.filtre-actif {
+    background-color: #f2a623;
+}
+
+/* ========================================================================
+    6. LISTE DES TOILETTES
+======================================================================== */
+
 #toiletteClassement {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
-    gap: var(--spacing-lg);
-    padding: var(--spacing-lg);
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 24px;
+    gap: 24px;
 }
 
-/* Carte individuelelle de toilette */
 .toilette-card {
     display: flex;
-    align-items: stretch;      /* au lieu de center */
-    gap: var(--spacing-md);   /* un peu moins d’espace entre image et texte */
+    gap: var(--spacing-md);
     background-color: var(--light2-color);
     border: 2px solid var(--dark2-color);
-    border-radius: 16px;
-    padding: var(--spacing-md) var(--spacing-lg);  /* moins de padding haut/bas */
-    max-width: 550px;
-    width: 100%;
-    margin: 0 auto;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
 }
 
 .toilette-image {
-    flex: 0 0 180px;          /* largeur fixe raisonnable */
+    flex: 0 0 180px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.toilette-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
 .toilette-info {
     display: flex;
     flex-direction: column;
-    flex: 1;
     gap: var(--spacing-md);
 }
 
@@ -183,81 +226,36 @@ nav select {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: 24px;
 }
 
 .toilette-details p {
     display: grid;
     grid-template-columns: 120px auto;
-    font-size: 1rem;
 }
 
 .toilette-details span {
     font-weight: bold;
 }
 
-/* --- ÉTOILES --- */
+/* ========================================================================
+    7. ÉTOILES
+======================================================================== */
 
-/* Conteneur */
-.etoiles {
-    display: flex;
-    gap: 4px;
-}
-
-/* Base : étoile vide */
-.etoile{
+.etoile {
     width: 24px;
     height: 24px;
-    display: inline-block;
     background-size: cover;
+    display: inline-block;
     background-image: url('/static/images/etoile-vide.png');
 }
 
-/* Étoile pleine */
 .etoile.full {
     background-image: url('/static/images/etoile-pleine.png');
 }
 
-/* Étoile demi */
 .etoile.half {
     background-image: url('/static/images/etoile-demi.png');
-}
-
-/* --- PAGES TOILETTES INDIVIDUELLES --- */
-
-/* Layout global */
-.toilette-layout {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: var(--light2-color);
-    border-radius: 12px;
-    border: 2px solid var(--dark2-color);
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    column-gap: 40px;
-    row-gap: 30px;
-}
-
-/* Section gauche: photo */
-.photo-section img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 2px solid var(--dark2-color);
-}
-
-/* Section droite: sliders */
-.sliders-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.etoiles-globales {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 10px;
 }
 
 .etoiles-globales .etoile {
@@ -265,13 +263,63 @@ nav select {
     height: 40px;
 }
 
-/* Slider group */
+/* ========================================================================
+    8. PAGE INDIVIDUELLE — TOILETTE
+======================================================================== */
+
+/* Layout principal : photo gauche, sliders droite */
+.toilette-layout {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--light2-color);
+    border: 2px solid var(--dark2-color);
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 40px;
+}
+
+/* Image de la toilette */
+.photo-section img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--dark2-color);
+}
+
+/* En-tête note globale (numéro + étoiles) */
+.toilette-note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.numero-toilette {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Section droite : sliders */
+.sliders-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Bloc complet des sliders */
 .slider-block {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
+.slider-block label {
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+/* Ligne slider : range + valeur */
 .slider-line {
     display: flex;
     align-items: center;
@@ -282,42 +330,10 @@ nav select {
     flex: 1;
 }
 
-/* Labels */
-.slider-block label {
+.slider-line span {
+    min-width: 24px;
+    text-align: right;
     font-weight: bold;
-    margin-bottom: -8px;
-}
-
-/* --- BOUTONS --- */
-.buttons-row {
-    grid-column: 1 / span 2;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-button.primary {
-    background-color: var(--primary-color);
-    color: var(--light1-color);
-    padding: 12px 24px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button.danger {
-    background-color: #B3261E;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    opacity: 0.9;
 }
 
 /* ============================
@@ -326,34 +342,25 @@ button:hover {
 
 input[type="range"] {
     -webkit-appearance: none;
-    width: 100%;
     height: 12px;
     background: transparent;
     cursor: pointer;
 }
 
-/* TRACK */
+/* WebKit (Chrome, Safari, Edge) */
 input[type="range"]::-webkit-slider-runnable-track {
     height: 12px;
     border-radius: 6px;
-
-    /* dégradé rempli / vide */
-    background: linear-gradient(
-        to right,
-        var(--primary-color) 0%,
-        var(--primary-color) var(--percent),
-        var(--light1-color) var(--percent),
-        var(--light1-color) 100%
-    );
-
-    /* contraste ajouté selon ta demande */
     border: 2px solid var(--primary-color);
+    background: linear-gradient(to right,
+            var(--primary-color) 0%,
+            var(--primary-color) var(--percent),
+            var(--light1-color) var(--percent),
+            var(--light1-color) 100%);
 }
 
-/* THUMB */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -362,9 +369,7 @@ input[type="range"]::-webkit-slider-thumb {
     margin-top: -8px;
 }
 
-/* ------- FIREFOX ------- */
-
-/* Ligne vide */
+/* Firefox */
 input[type="range"]::-moz-range-track {
     height: 12px;
     border-radius: 6px;
@@ -372,7 +377,6 @@ input[type="range"]::-moz-range-track {
     border: 2px solid var(--primary-color);
 }
 
-/* Ligne pleine */
 input[type="range"]::-moz-range-progress {
     height: 12px;
     border-radius: 6px;
@@ -380,7 +384,6 @@ input[type="range"]::-moz-range-progress {
     border: 2px solid var(--primary-color);
 }
 
-/* Thumb */
 input[type="range"]::-moz-range-thumb {
     width: 22px;
     height: 22px;
@@ -389,40 +392,401 @@ input[type="range"]::-moz-range-thumb {
     border: 2px solid white;
 }
 
+/* ============================
+   BOUTONS PAGE INDIVIDUELLE
+============================ */
+
+.buttons-row {
+    grid-column: 1 / span 2;
+    max-width: 1100px;
+    width: 100%;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons-row button {
+    flex: 0;
+    width: auto;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Style instruction */
+.buttons-row .instruction {
+    background-color: var(--dark2-color);
+    color: white;
+    border: 2px solid var(--dark1-color);
+}
+
+.buttons-row .instruction:hover {
+    background-color: var(--primary-color);
+}
+
+/* Style primary */
+.buttons-row .primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--dark2-color);
+}
+
+.buttons-row .primary:hover {
+    background-color: var(--dark2-color);
+}
 
 
-/* Conteneur global des filtres */
-#filtres-toilettes {
+
+/* ========================================================================
+    9. LOGIN / REGISTER — STYLE MODERNE
+======================================================================== */
+
+/* Conteneur principal */
+.login-container {
+    max-width: 380px;
+    margin: 90px auto;
+    background: var(--light2-color);
+    /* fond des cartes */
+    padding: 32px;
+    border-radius: 12px;
+    border: 2px solid var(--dark2-color);
+    text-align: center;
+
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 22px;
 }
 
-/* Une ligne de filtres (Pavillon / Type / Étage) */
-.filtre-groupe {
+/* Titre */
+.login-container h1 {
+    margin-bottom: 10px;
+    color: var(--dark2-color);
+}
+
+/* Formulaire */
+.login-form {
     display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-top: 2px;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* Titre du groupe */
-.filtre-titre {
-    font-weight: bold;
-    margin-right: 4px;
+/* Champs */
+.login-form input,
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 2px solid var(--dark2-color);
+    background-color: var(--light1-color);
+    font-size: 16px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    margin-bottom: 6px;
 }
 
-/* Boutons de filtre */
-.filtre-btn {
-    border-radius: 12px;
-    padding: 2px 8px;
-    border: 1px solid #556b2f;
-    background-color: #f5f7c0;
+/* Effet focus */
+.login-form input:focus,
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 6px rgba(90, 116, 17, 0.4);
+}
+
+/* Bouton principal */
+.login-form button,
+.login-container button {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 8px;
+
+    font-size: 17px;
+    border-radius: 10px;
+    border: none;
+
+    background-color: var(--primary-color);
+    color: white;
+
     cursor: pointer;
-    font-size: 0.8rem;
+    transition: background-color 0.25s ease, transform 0.15s ease, opacity 0.2s ease;
 }
 
-/* Bouton sélectionné */
-.filtre-btn.filtre-actif {
-    background-color: #f2a623;
+/* Hover */
+.login-form button:hover,
+.login-container button:hover {
+    background-color: var(--dark2-color);
+}
+
+/* Effet dynamique */
+.login-form button:active,
+.login-container button:active {
+    transform: scale(0.97);
+}
+
+/* Liens */
+.login-link {
+    color: var(--dark1-color);
+    font-size: 14px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ========================================================================
+    10. RESPONSIVE — VERSION MOBILE
+======================================================================== */
+
+@media (max-width: 900px) {
+
+    /* ============================================================
+       HEADER — PAGE PRINCIPALE
+    ============================================================ */
+
+    header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    /* Logos centrés */
+    .header-content {
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Logos plus petits */
+    .logo-toilette,
+    .logo-texte {
+        height: 120px;
+    }
+
+    /* Ligne mobile : Filtres + Déconnexion */
+    .header-buttons-mobile {
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    #toggleFiltres {
+        width: auto;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background-color: var(--light1-color);
+        border: 1px solid var(--dark2-color);
+        font-weight: bold;
+    }
+
+    #btnLogoutMobile {
+        width: auto;
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+
+    /* Déconnexion desktop disparait */
+    #btnLogoutDesktop {
+        display: none !important;
+    }
+
+    /* Filtres */
+    #filtres-toilettes {
+        display: none;
+        width: 100%;
+        order: 3;
+    }
+
+    #filtres-toilettes.open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filtre-groupe {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .filtre-titre {
+        width: 100%;
+        margin-bottom: 6px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .filtre-btn {
+        margin: 0;
+        padding: 6px 12px;
+    }
+
+
+    /* ============================================================
+       PAGE PRINCIPALE — LISTE DES TOILETTES
+    ============================================================ */
+
+    #toiletteClassement {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ============================================================
+       CARTES TOILETTES — MOBILE
+    ============================================================ */
+
+    .toilette-card {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+        max-width: 380px;
+        margin: 0 auto;
+        align-items: stretch;
+        text-align: left;
+    }
+
+    .toilette-image {
+        width: 100%;
+        max-height: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-color: var(--light2-color);
+    }
+
+    .toilette-image img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+    /* ============================================================
+       PAGE INDIVIDUELLE — HEADER MOBILE
+    ============================================================ */
+
+    .header-actions {
+        order: 2;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        gap: var(--spacing-sm);
+    }
+
+    .header-actions button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+
+    /* ============================================================
+       PAGE INDIVIDUELLE — LAYOUT MOBILE
+    ============================================================ */
+
+    .toilette-layout {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 24px;
+        width: 90%;
+        max-width: 600px;
+        margin: 20px auto;
+    }
+
+    /* Numéro + étoiles */
+    .toilette-note-header {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        gap: 8px;
+    }
+
+    /* Photo */
+    .photo-section img {
+        width: 100%;
+        max-height: 260px;
+        object-fit: contain;
+    }
+
+    /* Réduction des étoiles en mobile */
+    .etoiles-globales .etoile {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    /* Sliders */
+    .sliders-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .slider-block {
+        gap: 14px;
+    }
+
+    .slider-line {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .slider-line input[type="range"] {
+        flex: 1;
+    }
+
+    .slider-line span {
+        min-width: 28px;
+        text-align: right;
+    }
+
+    /* Boutons */
+    .buttons-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .buttons-row button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    /* ============================================================
+       LOGIN / REGISTER — MOBILE
+    ============================================================ */
+
+    .login-container,
+    .register-container {
+        width: 90%;
+        max-width: 380px;
+        margin: 40px auto;
+        padding: 24px;
+        border-radius: var(--border-radius);
+        text-align: center;
+    }
+
+    /* Centrer les logos en haut des pages login / register */
+    header .logo-toilette,
+    header .logo-texte {
+        height: 110px;
+    }
 }

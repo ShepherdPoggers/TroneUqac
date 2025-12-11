@@ -145,6 +145,16 @@ def update_toilette():
     
             
     return jsonify({"status": "ok"})    
+
+@app.route("/logout")
+def logout():
+    session.clear()  # efface l’utilisateur connecté
+    return redirect(url_for("login"))
+
+@app.route("/back")
+def back():
+    return redirect(url_for("loadPagePrincipal"))
+
     
 if __name__ == "__main__":
     app.run(debug=True)

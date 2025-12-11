@@ -11,11 +11,6 @@ async function loadToilette() {
     initFiltres()
     // Tri initial par note globale avec filtres = "tous"
     appliquerFiltresEtTri()
-    //tri('note')
-    const triToilettes = document.getElementById('triToilettes')
-    triToilettes.addEventListener('change', (e) =>
-        tri(e.target.value)
-    )
 }
 
 /*Initialisation des boutons de filtres (pavillon, type, étage) */
@@ -49,6 +44,17 @@ function initFiltres() {
             appliquerFiltresEtTri()
         })
     })
+
+    const triBtns = document.querySelectorAll('[data-tri]');
+    triBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            triBtns.forEach(b => b.classList.remove('filtre-actif'));
+            btn.classList.add('filtre-actif');
+            critereTriCourant_ = btn.getAttribute('data-tri');
+            appliquerFiltresEtTri();
+        });
+    });
+
 }
 
 /*Applique les filtres (pavillon/type/étage) puis le tri courant, puis affiche*/
@@ -190,4 +196,49 @@ function noterToilette(toilette) {
 }
 
 loadToilette();
+
+// ===========================
+// BOUTONS DÉCONNEXION
+// ===========================
+
+const logoutButtons = [
+    document.getElementById("btnLogoutDesktop"),
+    document.getElementById("btnLogoutMobile"),
+    document.getElementById("btnLogout") // au cas où il existe encore
+];
+
+logoutButtons.forEach(btn => {
+    if (btn) {
+        btn.addEventListener("click", () => {
+            window.location.href = "/logout";
+        });
+    }
+});
+
+
+// ===========================
+// BOUTON RETOUR
+// ===========================
+const btnBack = document.getElementById("btnBack");
+if (btnBack) {
+    btnBack.addEventListener("click", () => {
+        window.location.href = "/back";
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("toggleFiltres");
+    const filtres = document.getElementById("filtres-toilettes");
+
+    if (toggleBtn && filtres) {
+        toggleBtn.addEventListener("click", () => {
+            filtres.classList.toggle("open");
+            toggleBtn.textContent = filtres.classList.contains("open")
+                ? "Cacher les filtres"
+                : "Afficher les filtres";
+        });
+    }
+});
+
+    
 

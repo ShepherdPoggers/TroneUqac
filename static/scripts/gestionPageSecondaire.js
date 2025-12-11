@@ -132,5 +132,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         "Après avoir évaluer la toilette, appuyez sur « Envoyer la note». Votre évaluation sera enregistrée et le site vous renverra à la page principal.");
     });
 
+    // ===========================
+    // BOUTON DÉCONNEXION
+    // ===========================
+    const btnLogout = document.getElementById("btnLogout");
+    if (btnLogout) {
+        btnLogout.addEventListener("click", () => {
+            window.location.href = "/logout";
+        });
+    }
+
+    // ===========================
+    // BOUTON RETOUR
+    // ===========================
+    const btnBack = document.getElementById("btnBack");
+    if (btnBack) {
+        btnBack.addEventListener("click", () => {
+            window.location.href = "/back";
+        });
+    }
 })
 

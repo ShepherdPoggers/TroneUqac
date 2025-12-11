@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trône UQAC – Détails de la toilette</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
@@ -25,8 +26,8 @@
             </div>
             <!-- Retour + numéro toilette -->
             <div class="header-actions">
-                <a class="retour-btn" href="/">← Retour</a>
-                <h2 id="toiletteNumero">--</h2>
+                <button id="btnLogout" class="logout-btn">Déconnexion</button>
+                <button id="btnBack" class="back-btn">Retour</button>
             </div>
         </div>
     </header>
@@ -43,13 +44,18 @@
         <!-- ÉTOILES + SLIDERS -->
         <section class="sliders-section">
             <!-- Étoiles globales -->
-            <div id="noteGlobale" class="etoiles-globales">
-                <span class="etoile" data-value="1"></span>
-                <span class="etoile" data-value="2"></span>
-                <span class="etoile" data-value="3"></span>
-                <span class="etoile" data-value="4"></span>
-                <span class="etoile" data-value="5"></span>
+            <div class="toilette-note-header">
+                <h1 id="toiletteNumero" class="numero-toilette">Numéro</h1>
+
+                <div id="noteGlobale" class="etoiles-globales">
+                    <span class="etoile" data-value="1"></span>
+                    <span class="etoile" data-value="2"></span>
+                    <span class="etoile" data-value="3"></span>
+                    <span class="etoile" data-value="4"></span>
+                    <span class="etoile" data-value="5"></span>
+                </div>
             </div>
+
             <h2>Évaluer cette toilette</h2>
             <div class="slider-block">
                 <label>Propreté</label>
@@ -76,7 +82,7 @@
         </section>
         <!-- BOUTONS -->
         <section class="buttons-row">
-            <button id="btnInstruction" class="danger">Instruction</button>
+            <button id="btnInstruction" class="instruction">Instructions</button>
             <button id="btnEnvoyerNote" class="primary">Envoyer la note</button>
         </section>
 

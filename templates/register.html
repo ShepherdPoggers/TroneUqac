@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trône UQAC</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}"
+</head>
+<body>
+    <header role="banner">
+        <div class="container">
+            <div class="header-content">
+                <img src="{{url_for('static', filename='images/logo_toilette.png')}}"
+                     alt="Logo toilette"
+                     class="logo-toilette">
+
+                <img src="{{url_for('static', filename='images/logo_titre.png')}}"
+                     alt="Titre Trône UQAC"
+                     class="logo-texte">
+            </div>
+        </div>
+    </header>
+    <div class="login-container">
+        <h1>Se créer un compte</h1>
+        <form method="post">
+            <input type="text" name="username" placeholder="Nom d'utilisateur">
+            <input type="password" name="password" placeholder="Mot de passe">
+            <input type="password" name="confirm-password" placeholder="Confirmer le mot de passe">
+            <button type="submit">Créer le compte</button>
+        </form>
+        <a href="/login">J'ai déjà un compte.</a>
+    </div>
+    
+
+</body>
+
+</html>

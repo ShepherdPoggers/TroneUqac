@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trône UQAC – Détails de la toilette</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts/gestionPageSecondaire.js') }}" defer></script>
+</head>
+
+<body>
+    <!-- ===========================
+          HEADER IDENTIQUE À LA PAGE PRINCIPALE
+    ============================ -->
+    <header role="banner">
+        <div class="container">
+            <!-- Logos -->
+            <div class="header-content">
+                <img src="{{url_for('static', filename='images/logo_toilette.png')}}"
+                     alt="Logo toilette"
+                     class="logo-toilette">
+                <img src="{{url_for('static', filename='images/logo_titre.png')}}"
+                     alt="Titre Trône UQAC"
+                     class="logo-texte">
+            </div>
+            <!-- Retour + numéro toilette -->
+            <div class="header-actions">
+                <button id="btnLogout" class="logout-btn">Déconnexion</button>
+                <button id="btnBack" class="back-btn">Retour</button>
+            </div>
+        </div>
+    </header>
+    <!-- ===========================
+          PAGE TOILETTE (layout moderne)
+    ============================ -->
+    <main class="toilette-layout">
+        <!-- PHOTO -->
+        <section class="photo-section">
+            <img id="toiletteImage"
+                 src="/static/images/placeholder.jpg"
+                 alt="Photo de la toilette">
+        </section>
+        <!-- ÉTOILES + SLIDERS -->
+        <section class="sliders-section">
+            <!-- Étoiles globales -->
+            <div class="toilette-note-header">
+                <h1 id="toiletteNumero" class="numero-toilette">Numéro</h1>
+
+                <div id="noteGlobale" class="etoiles-globales">
+                    <span class="etoile" data-value="1"></span>
+                    <span class="etoile" data-value="2"></span>
+                    <span class="etoile" data-value="3"></span>
+                    <span class="etoile" data-value="4"></span>
+                    <span class="etoile" data-value="5"></span>
+                </div>
+            </div>
+
+            <h2>Évaluer cette toilette</h2>
+            <div class="slider-block">
+                <label>Propreté</label>
+                <div class="slider-line">
+                    <input type="range" id="sliderProprete" min="1" max="5" value="3">
+                    <span id="valeurProprete">3</span>
+                </div>
+                <label>Achalandage</label>
+                <div class="slider-line">
+                    <input type="range" id="sliderAchalandage" min="1" max="5" value="4">
+                    <span id="valeurAchalandage">4</span>
+                </div>
+                <label>Quantité de papier toilette</label>
+                <div class="slider-line">
+                    <input type="range" id="sliderPapier" min="1" max="5" value="2">
+                    <span id="valeurPapier">2</span>
+                </div>
+                <label>Température de la cuvette</label>
+                <div class="slider-line">
+                    <input type="range" id="sliderTemperature" min="1" max="5" value="5">
+                    <span id="valeurTemperature">5</span>
+                </div>
+            </div>
+        </section>
+        <!-- BOUTONS -->
+        <section class="buttons-row">
+            <button id="btnInstruction" class="instruction">Instructions</button>
+            <button id="btnEnvoyerNote" class="primary">Envoyer la note</button>
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trône UQAC</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <script src="{{ url_for('static', filename='scripts/gestionPagePrincipal.js') }}" defer></script>
+</head>
+
+<body>
+    <!-- En-tête -->
+    <header role="banner">
+        <div class="container">
+
+            <div class="header-content">
+                <img src="{{url_for('static', filename='images/logo_toilette.png')}}" alt="Logo Trône UQAC"
+                    class="logo-toilette">
+                <img src="{{url_for('static', filename='images/logo_titre.png')}}" alt="Titre Trône UQAC"
+                    class="logo-texte">
+            </div>
+
+            <!-- Boutons MOBILE -->
+            <div class="header-buttons-mobile">
+                <button id="toggleFiltres" class="toggle-filtres-btn">Afficher les filtres ⬇</button>
+                <button id="btnLogoutMobile" class="logout-btn">Déconnexion</button>
+            </div>
+            
+
+            <!-- FILTRES -->
+            <div id="filtres-toilettes">
+                <!-- Pavillon -->
+                <div class="filtre-groupe">
+                    <span class="filtre-titre">Pavillon :</span>
+                    <button type="button" class="filtre-btn filtre-actif" data-filtre-pavillon="tous">Tous</button>
+                    <button type="button" class="filtre-btn" data-filtre-pavillon="Principal">Principal</button>
+                    <button type="button" class="filtre-btn" data-filtre-pavillon="Humaniste">Humaniste</button>
+                    <button type="button" class="filtre-btn" data-filtre-pavillon="Sportif">Sportif</button>
+                    <!-- d'autres pavillons possibles -->
+                </div>
+                <!-- Type -->
+                <div class="filtre-groupe">
+                    <span class="filtre-titre">Type :</span>
+                    <button type="button" class="filtre-btn filtre-actif" data-filtre-type="tous">Tous</button>
+                    <button type="button" class="filtre-btn" data-filtre-type="Homme">Homme</button>
+                    <button type="button" class="filtre-btn" data-filtre-type="Femme">Femme</button>
+                    <button type="button" class="filtre-btn" data-filtre-type="Mixte">Mixte</button>
+                </div>
+                <!-- Étage -->
+                <div class="filtre-groupe">
+                    <span class="filtre-titre">Étage :</span>
+                    <button type="button" class="filtre-btn filtre-actif" data-filtre-etage="tous">Tous</button>
+                    <button type="button" class="filtre-btn" data-filtre-etage="1">1</button>
+                    <button type="button" class="filtre-btn" data-filtre-etage="2">2</button>
+                    <button type="button" class="filtre-btn" data-filtre-etage="3">3</button>
+                    <button type="button" class="filtre-btn" data-filtre-etage="4">4</button>
+                    <!-- 4, 5, etc. si besoin -->
+                </div>
+                <!-- Tri -->
+                <div class="filtre-groupe">
+                    <span class="filtre-titre">Trier par :</span>
+                    <button type="button" class="filtre-btn filtre-actif" data-tri="note">Note globale</button>
+                    <button type="button" class="filtre-btn" data-tri="proprete">Propreté</button>
+                    <button type="button" class="filtre-btn" data-tri="achalandage">Achalandage</button>
+                    <button type="button" class="filtre-btn" data-tri="papier">Papier</button>
+                    <button type="button" class="filtre-btn" data-tri="temperature">Température</button>
+                </div>
+            </div>
+            <!-- Bouton desktop -->
+            <button id="btnLogoutDesktop" class="logout-btn">Déconnexion</button>
+        </div>
+    </header>
+    <!-- Section pour le classement des toilettes -->
+    <section id="toiletteClassement">
+    </section>
+</body>
+
+</html>

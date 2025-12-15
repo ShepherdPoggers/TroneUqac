@@ -13,6 +13,7 @@ def LoadToilettes():
 
 #Fonctions fait par ChatGPT    
 def load_users():
+    """Permet de charger la liste des utilisateurs"""
     try:
         with open("data/users.json", "r", encoding="utf-8") as f:
             return json.load(f)
@@ -20,10 +21,12 @@ def load_users():
         return []
 
 def save_users(users):
+    """Permet de sauvegarder un utilisateur dans le .json"""
     with open("data/users.json", "w", encoding="utf-8") as f:
         json.dump(users, f, indent=4, ensure_ascii=False)
 
 def find_user(username):
+    """Permet de gerer si un utilisateur existe déjà"""
     users = load_users()
     for user in users:
         if user["username"] == username:
@@ -32,6 +35,7 @@ def find_user(username):
 #Fin des focntions de ChatGPT
     
 def saveToilettes(data):
+
     """Permet de mettre à jour le fichier toilettes.json"""
     with open("data/toilettes.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
@@ -44,6 +48,7 @@ def trouverToilette(toilettes, numero):
 @app.route("/register", methods=["GET", "POST"])
 #Fait par ChatGPT
 def register():
+    """Permet de gérer le register du site web"""
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
@@ -83,6 +88,7 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 #Fait par ChatGPT
 def login():
+    """Permet de gérer le login du site Web"""
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
